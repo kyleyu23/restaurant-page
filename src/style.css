@@ -1,0 +1,22 @@
+* {
+    /* outline: 1px green solid; */
+}
+
+body {
+    background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    column-gap: 5vw;
+}
+
+.navbar .navlink {
+    cursor: pointer;
+}
+
+.navbar .navlink:hover {
+    background-color: #333;
+}
