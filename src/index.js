@@ -1,47 +1,64 @@
-import { home } from './home.js';
-import { menu } from './menu.js';
-import { contact } from './contact.js';
+import { appendHome } from './home.js';
+import { appendMenu } from './menu.js';
+import { appendContact } from './contact.js';
 import './style.css';
 
 const body = document.querySelector('body');
+let currentTab = '';
 
 //create and append nav bar
 const navbar = document.createElement('nav');
-navbar.setAttribute("class", "navbar");
+navbar.classList.add("navbar");
 body.appendChild(navbar);
 
 //create and append contents div
 const contents = document.createElement('div');
-contents.setAttribute("id", "contents");
+contents.id = "contents";
 body.appendChild(contents);
 
 //createNavTabs();
-const homeTab = document.createElement('div');
-homeTab.setAttribute("class", "navlink");
+const homeTab = document.createElement('a');
+homeTab.href = "#";
+homeTab.classList.add("navlink");
 homeTab.textContent = "Home";
 
-const menuTab = document.createElement('div');
-menuTab.setAttribute("class", "navlink");
+const menuTab = document.createElement('a');
+menuTab.href = "#";
+menuTab.classList.add("navlink");
 menuTab.textContent = "Menu";
 
-const contactTab = document.createElement('div');
-contactTab.setAttribute("class", "navlink");
+const contactTab = document.createElement('a');
+contactTab.href = "#";
+contactTab.classList.add("navlink");
 contactTab.textContent = "Contact";
 
 //addListeners();
-homeTab.addEventListener("click", () => {
+homeTab.addEventListener("click", (event) => {
+
+    if (currentTab === event.target.textContent) {
+        return;
+    }
+    currentTab = event.target.textContent;
     deleteChildren(contents);
-    home(contents);
+    appendHome(contents);
 })
 
-menuTab.addEventListener("click", () => {
+menuTab.addEventListener("click", (event) => {
+    if (currentTab === event.target.textContent) {
+        return;
+    }
+    currentTab = event.target.textContent;
     deleteChildren(contents);
-    menu(contents);
+    appendMenu(contents);
 })
 
-contactTab.addEventListener("click", () => {
+contactTab.addEventListener("click", (event) => {
+    if (currentTab === event.target.textContent) {
+        return;
+    }
+    currentTab = event.target.textContent;
     deleteChildren(contents);
-    contact(contents);
+    appendContact(contents);
 })
 //appendTabs();
 navbar.appendChild(homeTab);
@@ -52,5 +69,7 @@ function deleteChildren(parentElement) {
     parentElement.innerHTML = "";
 }
 
-//default contents is home
-home(contents);
+//default tab is home
+if (currentTab === '') {
+    appendHome(contents);
+}

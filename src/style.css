@@ -1,22 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 * {
-    /* outline: 1px green solid; */
+    /* outline: 1px solid green; */
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
     background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
-    color: white;
+    color: #F0E7D8;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 1vh;
 }
 
 .navbar {
     display: flex;
     justify-content: center;
-    column-gap: 5vw;
+    column-gap: 4vw;
 }
 
 .navbar .navlink {
     cursor: pointer;
+    text-decoration: none;
+    color: #F0E7D8;
+    outline: #F0E7D8 1px solid;
+    padding: 10px;
 }
 
 .navbar .navlink:hover {
-    background-color: #333;
+    background-color: #A63A50;
+}
+
+#contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    row-gap: 4vh;
+}
+
+h1 {
+    font-size: 4rem;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    outline: solid 1px #A63A50;
+    padding: 1rem;
+}
+
+.card p {
+    margin: 1rem;
+}
+
+.card#quote, .card.menu-item {
+    max-width: 25vw;
+}
+
+#menu {
+    margin-top: 8vh;
 }
