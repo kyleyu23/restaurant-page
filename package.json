@@ -17,5 +17,14 @@
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.5.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyleyu23/restaurant-page.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kyleyu23/restaurant-page/issues"
+  },
+  "homepage": "https://github.com/kyleyu23/restaurant-page#readme"
 }
